@@ -1,0 +1,27 @@
+﻿<Page x:Class="kmuss.рабочий_стол.рабстол.dobvtab"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kmuss.рабочий_стол.рабстол"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="dobvtab" Background="White">
+
+    <Grid >
+        <StackPanel >
+            <StackPanel>
+                <Label Name="lalble2" Content="IDnaprovlenie"></Label>
+                <TextBox Name="IDnaprovlenie" Height="30" Width="700" Margin="50 50 " HorizontalAlignment="Center" VerticalAlignment="Center" TextChanged="IDnaprovlenie_TextChanged"></TextBox>
+           </StackPanel>
+            <Label Name="lalble1" Content="naprovlenierabot1"></Label>
+            <TextBox Name="naprovlenierabot1" Height="30" Width="700" Margin="50 12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+            </StackPanel>
+        <StackPanel VerticalAlignment="Bottom">
+            <Button Name="dobavit" Height="40" Width="800" Content="сохранить" VerticalAlignment="Center" Click="Dobavit_Click" />
+        </StackPanel>
+        
+        
+        
+    </Grid>
+</Page>

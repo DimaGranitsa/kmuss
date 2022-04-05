@@ -1,0 +1,625 @@
+﻿<Page x:Class="kmuss.рабочий_стол.рабстол.rabstol"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kmuss.рабочий_стол.рабстол"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="rabstol">
+
+    <Grid>
+        <!--Margin="0,0,0,0"-->
+        <DockPanel>
+
+
+            <StackPanel  Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="2,5">
+
+                <Button Name="prosmotretifoni1Tab" Click="Prosmotretifoni1Tab_Click_1"   >вывести напрраб</Button>
+                <Button Name="prosmotretifoni2Tab" Click="Prosmotretifoni2Tab_Click_2" >вывести работа</Button>
+                <Button Name="prosmotretifoni3Tab" Click="Prosmotretifoni3Tab_Click_1"   >вывести кс</Button>
+                <Button Name="prosmotretifoni4Tab" Click="Prosmotretifoni4Tab_Click_1"   >вывести вр</Button>
+                <Button Name="prosmotretifoni5Tab" Click="Prosmotretifoni5Tab_Click_1"  >вывести оплата раб</Button>
+                <Button Name="prosmotretifoni6Tab" Click="Prosmotretifoni6Tab_Click_1"   >вывести оплата мат</Button>
+                <Button Name="prosmotretifoni7Tab" Click="Prosmotretifoni7Tab_Click" >просмотреть вязальщиков</Button>
+                <TextBox Width="700" Height="21" ></TextBox>
+            </StackPanel>
+
+            <TabControl Name="tcSample" SelectionChanged="TcSample_SelectionChanged">
+                <TabItem x:Name="q" Header="напровление работ" >
+                    <StackPanel  >
+                        <Button Name="delete1" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Delete1_Click">удалить из бд</Button>
+                        <Button Name="dobavit1" Height="20" Width="123" Margin="12" Click="Dobavit1_Click" HorizontalAlignment="Left">добавить в бд</Button>
+                        <Button Name="obnovlenie1" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Obnovlenie1_Click">обновить</Button>
+                        <DataGrid Grid.Row="1" x:Name="DGAg1" AutoGenerateColumns="False"
+IsReadOnly="True" CanUserAddRows="False" Margin="20,50,92,10"
+Background="#FF258175"
+BorderBrush="#FF235E97"
+Foreground="#FF175517" SelectionChanged="DGAg1_SelectionChanged">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="IDnaprovlenie" Binding="{Binding IDnaprovlenie}"/>
+                                <DataGridTextColumn Header="naprovlenierabot1" Binding="{Binding naprovlenierabot1}"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </StackPanel>
+
+                </TabItem>
+                <TabItem Header="работа" >
+                    <StackPanel   >
+                        <Button Name="delete2" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Delete2_Click">удалить из бд</Button>
+                        <Button Name="obnovlenie2" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Obnovlenie2_Click" >обновить</Button>
+                        <Button Name="dobavit2" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Dobavit2_Click">добавить в бд</Button>
+                        <DataGrid Grid.Row="1" x:Name="DGAg2" AutoGenerateColumns="False"
+IsReadOnly="True" CanUserAddRows="False" Margin="20,50,92,10"
+Background="#FF258175"
+BorderBrush="#FF235E97"
+Foreground="#FF175517">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                                <DataGridTextColumn Header="naprovlenierabot" Binding="{Binding naprovlenierabot}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </TabItem>
+
+
+
+                <TabItem Header="кс" >
+                    <StackPanel   >
+                        <Button Name="delete3" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Delete3_Click">удалить из бд</Button>
+                        <Button Name="obnovlenie3" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Obnovlenie3_Click"  >обновить</Button>
+                        <Button Name="dobavit3" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Dobavit3_Click">добавить в бд</Button>
+                        <DataGrid Grid.Row="1" x:Name="DGAg3" AutoGenerateColumns="False"
+IsReadOnly="True" CanUserAddRows="False" Margin="20,50,92,10"
+Background="#FF258175"
+BorderBrush="#FF235E97"
+Foreground="#FF175517">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="naprovlenierabot" Binding="{Binding naprovlenierabot}"/>
+                                <DataGridTextColumn Header="ed" Binding="{Binding ed}"/>
+                                <DataGridTextColumn Header="kol-vo" Binding="{Binding kol-vo}"/>
+                                <DataGridTextColumn Header="price" Binding="{Binding price}"/>
+                                <DataGridTextColumn Header="costwithvat" Binding="{Binding costwithvat}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="вр" >
+                    <StackPanel   >
+                        <Button Name="obnovlenie4" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Obnovlenie4_Click"  >обновить</Button>
+
+                        <Button Name="delete4" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Delete4_Click">удалить из бд</Button>
+                        <Button Name="dobavit4" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Dobavit4_Click">добавить в бд</Button>
+                        <DataGrid Grid.Row="1" x:Name="DGAg4" AutoGenerateColumns="False"
+IsReadOnly="True" CanUserAddRows="False" Margin="20,50,92,10"
+Background="#FF258175"
+BorderBrush="#FF235E97"
+Foreground="#FF175517">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="naprovlenierabot" Binding="{Binding naprovlenierabot}"/>
+                                <DataGridTextColumn Header="vidwork" Binding="{Binding vidwork}"/>
+                                <DataGridTextColumn Header="ed" Binding="{Binding ed}"/>
+                                <DataGridTextColumn Header="kol-vo" Binding="{Binding kol-vo}"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="оплатаработа" HorizontalAlignment="Left" Margin="-2,-2,-1.8,2.4" Width="91" >
+                    <StackPanel  >
+                        <Button Name="obnovlenie6" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Obnovlenie5_Click"   >обновить</Button>
+
+                        <Button Name="delete5" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Delete5_Click">удалить из бд</Button>
+                        <Button Name="dobavit5" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Dobavit5_Click">добавить в бд</Button>
+                        <DataGrid Grid.Row="1" x:Name="DGAg6" AutoGenerateColumns="False"
+IsReadOnly="True" CanUserAddRows="False" Margin="20,50,92,10"
+Background="#FF258175"
+BorderBrush="#FF235E97"
+Foreground="#FF175517">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                                <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
+                                <DataGridTextColumn Header="ed" Binding="{Binding ed}"/>
+                                <DataGridTextColumn Header="kol-vo" Binding="{Binding kol-vo}"/>
+                                <DataGridTextColumn Header="price" Binding="{Binding price}"/>
+                                <DataGridTextColumn Header="theamount" Binding="{Binding theamount}"/>
+                                <DataGridTextColumn Header="in total" Binding="{Binding intotal}"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="оплата материала" >
+                    <StackPanel  >
+                        <Button Name="obnovlenie7" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Obnovlenie7_Click"    >обновить</Button>
+
+                        <Button Name="delete6" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Delete6_Click">удалить из бд</Button>
+                        <Button Name="dobavit6" Height="20" Width="123" Margin="12" HorizontalAlignment="Left" Click="Dobavit6_Click">добавить в бд</Button>
+                        <DataGrid Grid.Row="1" x:Name="DGAg7" AutoGenerateColumns="False"
+IsReadOnly="True" CanUserAddRows="False" Margin="20,50,92,10"
+Background="#FF258175"
+BorderBrush="#FF235E97"
+Foreground="#FF175517">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                                <DataGridTextColumn Header="name" Binding="{Binding name}"/>
+                                <DataGridTextColumn Header="ed" Binding="{Binding ed}"/>
+                                <DataGridTextColumn Header="kol-vo" Binding="{Binding kol-vo}"/>
+                                <DataGridTextColumn Header="price" Binding="{Binding price}"/>
+                                <DataGridTextColumn Header="theamount" Binding="{Binding theamount}"/>
+                                <DataGridTextColumn Header="intotal" Binding="{Binding intotal}"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="фото работы моноличика" >
+                    <StackPanel Width="1900" Height="1020">
+                        <Grid Width="1900" Height="1020">
+                            <Grid.RowDefinitions >
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/2.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="5"></Image>
+                        </Grid>
+
+
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="фото работы вязальщика" >
+                    <StackPanel Width="1900" Height="1020">
+                        <Grid Width="1900" Height="1020">
+                            <Grid.RowDefinitions >
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="12" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="0"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="1"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="2"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="3"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="4"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="5"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="6"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="7"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="8"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="9"
+                                 Grid.Row="5"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="0"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="1"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="2"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="3"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="4"></Image>
+                            <Image Height="102" Width="102" HorizontalAlignment="Left" Margin="50" Source="/kmuss;component/imeg/1.jpg"
+                                    Grid.Column="10"
+                                 Grid.Row="5"></Image>
+                        </Grid>
+
+                    </StackPanel>
+                </TabItem>
+
+
+
+            </TabControl>
+
+        </DockPanel>
+
+
+    </Grid>
+</Page>

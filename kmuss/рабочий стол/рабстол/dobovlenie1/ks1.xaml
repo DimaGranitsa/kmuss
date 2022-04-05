@@ -1,0 +1,35 @@
+﻿<Window x:Class="kmuss.рабочий_стол.рабстол.dobovlenie1.ks1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kmuss.рабочий_стол.рабстол.dobovlenie1"
+        mc:Ignorable="d"
+        Title="ks1" Height="450" Width="900">
+    <Grid>
+        <StackPanel >
+            <StackPanel Margin="50">
+                <Label Name="lalble1" Content="naprovlenierabot"></Label>
+                <TextBox Name="naprovlenierabot" Height="30" Width="700"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+
+                <Label Name="lalble2" Content="ed"></Label>
+                <TextBox Name="ed" Height="30" Width="700"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+
+                <Label Name="lalble3" Content="kolvo"></Label>
+                <TextBox Name="kolvo" Height="30" Width="700"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+
+                <Label Name="lalble4" Content="price"></Label>
+                <TextBox Name="price" Height="30" Width="700"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+
+                <Label Name="lalble5" Content="costwithvat"></Label>
+                <TextBox Name="costwithvat" Height="30" Width="700"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+               
+            </StackPanel>
+
+            
+            </StackPanel>
+        <StackPanel VerticalAlignment="Bottom">
+            <Button Name="dobavit1" Height="40" Width="800" Content="сохранить" VerticalAlignment="Center" Click="Dobavit1_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>
